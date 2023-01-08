@@ -4,7 +4,30 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.*;
 
-class Login{
+/*class Users{
+    String phoneNumber;
+    String password;
+    String name;
+    String balance;
+
+    public Users(String phoneNumber, String password, String name, String balance) {
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.name = name;
+        this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "phoneNuber='" + phoneNumber + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", balance='" + balance + '\'' +
+                '}';
+    }
+}*/
+/*class Login{
     String userName;
     String userPhoneNumber;
     String userBalance;
@@ -80,9 +103,9 @@ class Login{
         panel1.add(login);
     }
 
-}
+}*/
 
-class Dashboard{
+/*class Dashboard{
 
     String username;
     String userPhoneNumb;
@@ -90,7 +113,7 @@ class Dashboard{
     String userPas;
 
 
-    Dashboard(String username, String userPhoneNumb, String userBalance, String userPas){
+    Dashboard(String userPhoneNumb, String userPas, String username, String userBalance){
         this.username = username;
         this.userPhoneNumb = userPhoneNumb;
         this.userBalance = userBalance;
@@ -128,7 +151,7 @@ class Dashboard{
         cashOut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CashOut c1 = new CashOut(username, userPhoneNumb, userBalance, userPas);
+                CashOut c1 = new CashOut(userPhoneNumb, userPas, username, userBalance);
                 frame2.setVisible(false);
             }
         });
@@ -148,14 +171,14 @@ class Dashboard{
         panel2.add(recharge);
 
     }
-}
+}*/
 
-class CashOut {
+/*class CashOut {
     String username;
     String userPhoneNumb;
     String userBalance;
     String userPas;
-    CashOut(String username, String userPhoneNumb, String userBalance, String userPas) {
+    CashOut(String userPhoneNumb, String userPas, String username, String userBalance) {
 
         this.username = username;
         this.userPhoneNumb = userPhoneNumb;
@@ -210,23 +233,75 @@ class CashOut {
         JButton done = new JButton("Done");
         done.setBounds(200, 350, 100, 30);
         done.setVisible(true);
+
+
         done.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(sure.isSelected()){
                     if((userPhoneNumb.equals(phone.getText())) && (userPas.equals(password.getText()))) {
                         int reduce = Integer.parseInt(userBalance) - Integer.parseInt(amount.getText());
-                        try {
-                            FileWriter wr = new FileWriter("src/Users.txt");
-                            BufferedWriter bf = new BufferedWriter(wr);
-                            bf.write(userPhoneNumb+" "+userPas+" "+username+" "+reduce);
-                            bf.newLine();
-                            bf.close();
 
-                        }
-                        catch(Exception exp){
+                        ArrayList<Users> listOfLines = new ArrayList<>();
+                        try{
+                            File f = new File("src/Users.txt");
+                            Scanner scanner = new Scanner(f);
+                            int i=0;
+                            while(i!=1){
+                                String temp1 = scanner.next();
+                                String temp2 = scanner.next();
+                                String temp3 = scanner.next();
+                                String temp4 = scanner.next();
+                                if(temp1 != null){
+                                    Users u = new Users(temp1, temp2, temp3, temp4);
+                                    listOfLines.add(u);
+                                }
+                                if(temp1 == null){
+                                    i = 1;
+                                }
+                            }
+
+                        }catch(Exception exp){
                             exp.printStackTrace();
                         }
+
+                        for(int i=0; i< listOfLines.size(); i++){
+                            listOfLines.get(i);
+                        }
+
+//                        for (int i=0; i< listOfLines.size(); i++){
+//                            if(makeString().toString() == listOfLines.get(i).toString()){
+//                                listOfLines.remove(i);
+//                            }
+//                        }
+
+//                        for(int i=0; i< listOfLines.size(); i++){
+//                            System.out.println(listOfLines.get(i));
+//                        }
+                        try{
+                            FileWriter fw = new FileWriter("src/Users.txt", false);
+                            PrintWriter pw = new PrintWriter(fw, false);
+                            pw.flush();
+                            pw.close();
+                            fw.close();
+                        }catch(Exception exp){exp.printStackTrace();}
+
+//                        try{
+//
+//                            FileWriter wr = new FileWriter("src/Users.txt", true);
+//                            BufferedWriter bf = new BufferedWriter(wr);
+//                            //bf.newLine();
+//                            for (int i=0; i< listOfLines.size(); i++){
+//                                bf.write(listOfLines.get(i));
+//                                bf.newLine();
+//                            }
+//                            bf.write(userPhoneNumb+" "+userPas+" "+username+" "+reduce);
+//                            bf.close();
+//                            wr.close();
+//
+//                        }catch (Exception exp){
+//                            exp.printStackTrace();
+//                        }
                         Dashboard d1 = new Dashboard(username, userPhoneNumb, reduce+"", userPas);
                         frame3.setVisible(false);
                     }
@@ -236,7 +311,10 @@ class CashOut {
         panel3.add(done);
 
     }
-}
+    public String makeString() {
+        return userPhoneNumb+" "+userPas+" "+username+" "+userBalance;
+    }
+}*/
 
 
 public class MobileBanking{
