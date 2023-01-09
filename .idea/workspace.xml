@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b745b5cf-2e34-4724-81f9-2f5b37775a8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MobileBankingUpdated.java" afterDir="false" />
+    <list default="true" id="b745b5cf-2e34-4724-81f9-2f5b37775a8a" name="Changes" comment="Final Upgra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MobileBanking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MobileBanking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MobileBanking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MobileBankingUpdated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MobileBankingUpdated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Academical/UIU 5th Semester/OOP/OOP",
+    "last_opened_file_path": "D:/Academical/UIU 5th Semester/OOP/Mobile-Banking",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,6 +52,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="MobileBankingUpdated" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MobileBankingUpdated" />
+      <module name="Mobile-Banking" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MobileBankingUpdated" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,6 +84,7 @@
       <workItem from="1673180697413" duration="4427000" />
       <workItem from="1673187726021" duration="339000" />
       <workItem from="1673188154288" duration="17408000" />
+      <workItem from="1673241186724" duration="3622000" />
     </task>
     <task id="LOCAL-00001" summary="The basics">
       <created>1673021542617</created>
@@ -99,17 +114,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="The basics" />
     <option name="LAST_COMMIT_MESSAGE" value="The basics" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MobileBanking.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

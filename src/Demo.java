@@ -9,6 +9,8 @@ public class Demo {
         arrayList.add("4");
         arrayList.add("5");
         String num = "3";
+
+        System.out.println(arrayList.get(0));
         for(int i=0; i< arrayList.size(); i++){
             System.out.println(arrayList.get(i));
         }

@@ -5,6 +5,7 @@ import java.io.*;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Users{
@@ -42,7 +43,7 @@ class Login{
         JPanel loginPanel = new JPanel(null);
         loginFrame.add(loginPanel);
 
-        JLabel phoneNumberLabel = new JLabel("phoneNumber");
+        JLabel phoneNumberLabel = new JLabel("Phone Number");
         phoneNumberLabel.setBounds(100, 150, 200, 20);
         loginPanel.add(phoneNumberLabel);
 
@@ -148,7 +149,7 @@ class Dashboard{
         recharge.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CashOut c2 = new CashOut(userPhoneNumber, userPassword, username, userBalance);
+                Recharge c2 = new Recharge(userPhoneNumber, userPassword, username, userBalance);
                 DashBoardFrame.setVisible(false);
             }
         });
@@ -168,7 +169,7 @@ class CashOut {
         this.username = username;
         this.userBalance = userBalance;
 
-        JFrame frame3 = new JFrame("Dashboard");
+        JFrame frame3 = new JFrame("Cashout");
         frame3.setSize(500, 500);
         frame3.setDefaultCloseOperation(frame3.EXIT_ON_CLOSE);
         frame3.setVisible(true);
@@ -243,41 +244,159 @@ class CashOut {
                             System.out.println(listOfLines.get(i));
                         }
 
-                        String temp = userPhoneNumb+ " "+userPas+" "+username+" "+userBalance;
-                        for(int i=0; i< listOfLines.size(); i++) {
-                            String temp1 = listOfLines.get(i);
-                            System.out.println(temp+ " "+temp1);
-                            if (temp == temp1) {
-                                listOfLines.remove(i);
+                        for(int i=0; i< listOfLines.size(); i++){
+                            System.out.println(listOfLines.get(i));
+                        }
+
+                        try{
+                            FileWriter fw = new FileWriter("src/Users.txt", false);
+                            PrintWriter pw = new PrintWriter(fw, false);
+                            pw.flush();
+                            pw.close();
+                            fw.close();
+                        }catch(Exception exp){exp.printStackTrace();}
+
+                        try{
+                            FileWriter wr = new FileWriter("src/Users.txt", true);
+                            BufferedWriter pw = new BufferedWriter(wr);
+                            pw.write(userPhoneNumb+" "+userPas+" "+username+" "+reduce);
+
+                            for (int i=0; i< listOfLines.size(); i++){
+                                pw.newLine();
+                                pw.write(listOfLines.get(i));
+
                             }
+                            pw.close();
+                            wr.close();
+
+                        }catch (Exception exp){
+                            exp.printStackTrace();
+                        }
+                        Dashboard d1 = new Dashboard(userPhoneNumb, userPas, username, reduce+"");
+                        frame3.setVisible(false);
+                    }
+                }
+            }
+        });
+        panel3.add(done);
+
+    }
+}
+
+class Recharge {
+    String userPhoneNumb;
+    String userPas;
+    String username;
+    String userBalance;
+    Recharge(String userPhoneNumb, String userPas, String username, String userBalance) {
+        this.userPhoneNumb = userPhoneNumb;
+        this.userPas = userPas;
+        this.username = username;
+        this.userBalance = userBalance;
+
+        JFrame frame3 = new JFrame("Recharge");
+        frame3.setSize(500, 500);
+        frame3.setDefaultCloseOperation(frame3.EXIT_ON_CLOSE);
+        frame3.setVisible(true);
+
+        JPanel panel3 = new JPanel(null);
+        frame3.add(panel3);
+
+        JLabel yPhone = new JLabel("Phone Number ");
+        yPhone.setBounds(100, 100, 200, 20);
+        panel3.add(yPhone);
+
+        JTextField phone = new JTextField();
+        phone.setBounds(200, 100, 200, 20);
+        phone.setVisible(true);
+        panel3.add(phone);
+
+        JLabel yAmount = new JLabel("Amount ");
+        yAmount.setBounds(100, 150, 200, 20);
+        panel3.add(yAmount);
+
+        JTextField amount = new JTextField();
+        amount.setBounds(200, 150, 200, 20);
+        amount.setVisible(true);
+        panel3.add(amount);
+
+        JLabel yPass = new JLabel("Password ");
+        yPass.setBounds(100, 200, 200, 20);
+        panel3.add(yPass);
+
+        JPasswordField password = new JPasswordField();
+        password.setBounds(200, 200, 200, 20);
+        password.setVisible(true);
+        panel3.add(password);
+
+
+        JCheckBox sure = new JCheckBox();
+        sure.setBounds(200, 295, 30, 30);
+        sure.setVisible(true);
+        panel3.add(sure);
+
+        JLabel are = new JLabel("Are you sure ?");
+        are.setBounds(230, 300, 200, 20);
+        panel3.add(are);
+
+        JButton done = new JButton("Done");
+        done.setBounds(200, 350, 100, 30);
+        done.setVisible(true);
+
+
+        done.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(sure.isSelected()){
+                    if((userPhoneNumb.equals(phone.getText())) && (userPas.equals(password.getText()))) {
+                        int reduce = Integer.parseInt(userBalance) + Integer.parseInt(amount.getText());
+                        ArrayList<String> listOfLines = new ArrayList<>();
+
+                        try{
+                            BufferedReader br = new BufferedReader(new FileReader("src/Users.txt"));
+                            String line = br.readLine() ;
+                            while (line != null){
+                                String temp = line.trim();
+                                listOfLines.add(temp);
+                                line = br.readLine();
+                            }
+                            br.close();
+                        }catch(Exception exception){
+                            exception.printStackTrace();
                         }
 
                         for(int i=0; i< listOfLines.size(); i++){
                             System.out.println(listOfLines.get(i));
                         }
 
-//                        try{
-//                            FileWriter fw = new FileWriter("src/Users.txt", false);
-//                            PrintWriter pw = new PrintWriter(fw, false);
-//                            pw.flush();
-//                            pw.close();
-//                            fw.close();
-//                        }catch(Exception exp){exp.printStackTrace();}
+                        for(int i=0; i< listOfLines.size(); i++){
+                            System.out.println(listOfLines.get(i));
+                        }
 
-//                        try{
-//                            FileWriter wr = new FileWriter("src/Users.txt", true);
-//                            BufferedWriter bf = new BufferedWriter(wr);
-//                            bf.newLine();
-//                            for (int i=0; i< listOfLines.size(); i++){
-//                                bf.newLine();
-//                            }
-//                            bf.write(userPhoneNumb+" "+userPas+" "+username+" "+reduce);
-//                            bf.close();
-//                            wr.close();
-//
-//                        }catch (Exception exp){
-//                            exp.printStackTrace();
-//                        }
+                        try{
+                            FileWriter fw = new FileWriter("src/Users.txt", false);
+                            PrintWriter pw = new PrintWriter(fw, false);
+                            pw.flush();
+                            pw.close();
+                            fw.close();
+                        }catch(Exception exp){exp.printStackTrace();}
+
+                        try{
+                            FileWriter wr = new FileWriter("src/Users.txt", true);
+                            BufferedWriter pw = new BufferedWriter(wr);
+                            pw.write(userPhoneNumb+" "+userPas+" "+username+" "+reduce);
+
+                            for (int i=0; i< listOfLines.size(); i++){
+                                pw.newLine();
+                                pw.write(listOfLines.get(i));
+
+                            }
+                            pw.close();
+                            wr.close();
+
+                        }catch (Exception exp){
+                            exp.printStackTrace();
+                        }
                         Dashboard d1 = new Dashboard(userPhoneNumb, userPas, username, reduce+"");
                         frame3.setVisible(false);
                     }
