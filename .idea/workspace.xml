@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b745b5cf-2e34-4724-81f9-2f5b37775a8a" name="Changes" comment="Final Upgra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MobileBanking.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MobileBankingUpdated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MobileBankingUpdated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Users.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +81,7 @@
       <workItem from="1673180697413" duration="4427000" />
       <workItem from="1673187726021" duration="339000" />
       <workItem from="1673188154288" duration="17408000" />
-      <workItem from="1673241186724" duration="3622000" />
+      <workItem from="1673241186724" duration="4955000" />
     </task>
     <task id="LOCAL-00001" summary="The basics">
       <created>1673021542617</created>
@@ -93,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673021542617</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Final and Working upgrades">
+      <created>1673244867063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673244867063</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +117,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="The basics" />
-    <option name="LAST_COMMIT_MESSAGE" value="The basics" />
+    <MESSAGE value="Final and Working upgrades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final and Working upgrades" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
