@@ -16,7 +16,6 @@ class Users{
         this.name = name;
         this.balance = balance;
     }
-
     @Override
     public String toString() {
         return phoneNumber+" "+password+" "+name+" "+balance;
